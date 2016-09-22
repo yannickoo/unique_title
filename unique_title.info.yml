@@ -1,0 +1,4 @@
+name: Unique Title
+type: module
+description: Adds unique constraint to node title.
+core: 8.x

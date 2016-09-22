@@ -1,0 +1,12 @@
+<?php
+
+/**
+ * Implements hook_entity_base_field_info_alter().
+ */
+function unique_title_entity_base_field_info_alter(&$fields, \Drupal\Core\Entity\EntityTypeInterface $entity_type) {
+  if ($entity_type->id() == 'node') {
+    /** @var \Drupal\Core\Field\BaseFieldDefinition $title */
+    $title = $fields['title'];
+    $title->addConstraint('UniqueField');
+  }
+}
